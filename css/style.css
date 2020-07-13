@@ -1,5 +1,5 @@
 body {
-    font-size: 14px;
+	font-size: 14px;
     color: #333;
     background-color: #fff;
     letter-spacing: 1px;
@@ -116,6 +116,7 @@ body {
 	text-align: center;
 	border: 2px solid #444;
 	border-top: none;
+	margin-bottom: 25px;
 }
 
 .squareInnerContainer:before,
@@ -352,6 +353,10 @@ body {
 
 #navigation li a {
 	color: #fff;
+}
+
+#navigation li a:hover{
+	color: #444;
 }
 
 .navbar-brand,
