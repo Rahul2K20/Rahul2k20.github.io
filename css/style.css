@@ -477,22 +477,8 @@ footer .linkedin:hover {
   background-color: #0073b2;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-.titleMessage .heading .main {
-  font-size: 35px;
-}
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-.titleMessage .heading .main {
-  font-size: 35px;
-}
-}
-
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
-.titleMessage .heading .main {
-  font-size: 35px;
+@media all and (max-device-width: 480px) {
+ .titleMessage .heading .main {
+  font-size: 30px;
 }
 }
