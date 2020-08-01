@@ -478,21 +478,21 @@ footer .linkedin:hover {
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-.main{
-  font-size: 5%;
-  }
+.titleMessage .heading .main {
+  font-size: 35px;
+}
 }
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width : 321px) {
-.main{
-  font-size: 5%;
-  }
+.titleMessage .heading .main {
+  font-size: 35px;
+}
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
-.main{
-  font-size: 5%;
-  }
+.titleMessage .heading .main {
+  font-size: 35px;
+}
 }
