@@ -405,7 +405,7 @@ footer {
 }
 
 footer p {
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   text-align: center;
   position: relative;
@@ -440,6 +440,8 @@ footer li a {
   -o-transition: all 0.3s ease-in, 1s;
   -ms-transition: all 0.3s ease-in, 1s;
   transition: all 0.3s ease-in, 1s;
+  height: 40px;
+  width: 40px; 
 }
 
 footer .facebook {
