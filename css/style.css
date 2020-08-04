@@ -5,6 +5,47 @@ body {
   letter-spacing: 1px;
 }
 
+.borderBtn {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 18px 50px 18px 50px;
+  display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease-in, 0s;
+  -moz-transition: all 0.3s ease-in, 0s;
+  -o-transition: all 0.3s ease-in, 0s;
+  -ms-transition: all 0.3s ease-in, 0s;
+  transition: all 0.3s ease-in, 0s;
+}
+
+
+.borderBtn:hover {
+  background-color: white;
+  color: #d82c2e;
+  text-decoration: none;
+}
+
+
+.borderBtn{
+position:absolute;
+bottom: 15%;
+right: 42%;
+}
+
+@media screen and (max-width: 1480px) {
+.borderBtn{
+display:none;
+}
+}
+
 .overlay {
   width: 100%;
   height: 100%;
