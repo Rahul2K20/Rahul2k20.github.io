@@ -135,10 +135,9 @@ $(document).ready(function() {
 
 	});
 	
-       $("a[href='.navbar-brand']").click(function() {
-         $("html, body").animate({ scrollTop: 0 }, "slow");
-         return false;
-       });
+	$(".navbar-brand).on("click", function() {
+        $("body").scrollTop(0);
+        });
 
 	const nav = $("#navigation");
 	const navTop = nav.offset().top;
