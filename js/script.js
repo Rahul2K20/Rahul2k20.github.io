@@ -135,8 +135,8 @@ $(document).ready(function() {
 
 	});
 	
-	$(".navbar-brand).on("click", function() {
-        $("body").scrollTop(0);
+	$(".navbar-brand").click(function() {
+        $("html").animate({ scrollTop: 0 }, "slow");
         });
 
 	const nav = $("#navigation");
