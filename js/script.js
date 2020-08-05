@@ -134,6 +134,11 @@ $(document).ready(function() {
 		$("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
 
 	});
+	
+       $("a[href='.navbar-brand']").click(function() {
+         $("html, body").animate({ scrollTop: 0 }, "slow");
+         return false;
+       });
 
 	const nav = $("#navigation");
 	const navTop = nav.offset().top;
