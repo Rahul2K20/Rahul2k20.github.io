@@ -375,6 +375,7 @@ display:none;
 
 #navigation {
   background-color: #d82c2e;
+  padding: 20px 0; 
   z-index: 100;
   width: 100%;
 }
