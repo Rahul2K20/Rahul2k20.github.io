@@ -206,14 +206,11 @@ display:none;
   height: 82%;
 }
 
-.col-md-7 {
-  position: relative;
+#about {
+  text-align: justify;
+  font-family: 'Lato', sans-serif;
 }
 
-.col-md-7 p {
-  text-align: justify;
-  font-family: Arial, Helvetica;
-}
 
 .contactButton {
   color: #fff;
