@@ -37,8 +37,7 @@ body {
 .borderBtn{
 position:absolute;
 bottom: 15%;
-right: 42%;
-text-align: center; 
+right: 43.53%;
 }
 
 @media screen and (max-width: 1480px) {
