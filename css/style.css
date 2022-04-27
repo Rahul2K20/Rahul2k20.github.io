@@ -38,6 +38,7 @@ body {
 position:absolute;
 bottom: 15%;
 right: 42%;
+text-align: center; 
 }
 
 @media screen and (max-width: 1480px) {
