@@ -157,23 +157,11 @@ $(document).ready(function() {
 			body.removeClass("fixedNav");
 		}
 	}
-
-	$('.owl-carousel').owlCarousel({
-	                autoplay: true,
-	                autoplayTimeout: 5000,
-	                navigation: false,
-	                margin: 10,
-	                responsive: {
-	                    0: {
-	                        items: 1
-	                    },
-	                    600: {
-	                        items: 2
-	                    },
-	                    1000: {
-	                        items: 2
-	                    }
-	                }
-	            })
+	
+	$("#skills").owlCarousel({
+	
+	autoPlay : 5000,
+	stopOnHover : false
+	)}
 
 });
