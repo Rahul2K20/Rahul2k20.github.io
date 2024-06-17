@@ -25,7 +25,7 @@ $(document).ready(function() {
 	});
 
 	var typed = new Typed(".typed", {
-		strings: ["Software Developer.", "Competitive Programmer.", "Student."],
+		strings: ["Software Developer.", "GenAI Practitioner.", "AWS Certified 2x"],
 		typeSpeed: 70,
 		loop: true,
 		startDelay: 1000,
