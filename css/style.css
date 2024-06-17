@@ -39,7 +39,7 @@ body {
 
 .borderBtn:hover {
   background-color: white;
-  color: #d82c2e;
+  color: #36454F;
   text-decoration: none;
 }
 
@@ -113,15 +113,15 @@ body {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  object-position: center 5%;
-  border-radius: 50%;
+  object-position: center;
+  border-radius: 100%;
 }
 
 
 
 .skillsSection,
 .contactSection {
-  background-color: #e74c3c;
+  background-color: #36454F;
   color: #fff;
 }
 
@@ -145,7 +145,7 @@ body {
 }
 
 .chart .percent {
-  color: #000;
+  color: #fff;
   line-height: 152px;
   display: inline-block;
   font-size: 35px;
@@ -190,7 +190,7 @@ body {
   font-size: 56px;
   margin-bottom: 10px;
   font-weight: 400;
-  color: #e74c3c;
+  color: #36454F;
 }
 
 .squareContent h3 {
@@ -233,13 +233,13 @@ body {
 
 .contactButton:hover {
   text-decoration: none;
-  color: #e74c3c;
+  color: #36454F;
   background-color: #fff;
 }
 
 .filter a {
-  color: #bdc3c7;
-  border: 1px solid #bdc3c7;
+  color: black;
+  border: 1px solid black;
   padding: 10px 18px;
   display: block;
   text-decoration: none;
@@ -251,8 +251,8 @@ body {
 }
 
 .filter .current {
-  background-color: #e74c3c;
-  border-color: #e74c3c;
+  background-color: #36454F;
+  border-color: #36454F;
   color: #fff;
 }
 
@@ -311,7 +311,7 @@ body {
 .items a {
   width: 40px;
   height: 40px;
-  background-color: #e74c3c;
+  background-color: #36454F;
   position: relative;
   display: inline-block;
   -webkit-transition: all 0.2s linear, 0.2s;
@@ -403,7 +403,7 @@ body {
 
 
 #navigation {
- background-color: #d82c2e;
+ background-color: #333;
  padding: 20px 10px;
  z-index: 100;
  width: 100%;
@@ -427,17 +427,17 @@ body {
 
 
 .navbar-nav li a:hover {
-  background: #c12728;
+  background: #36454F;
   color: white;
 }
 
 .navbar-nav li a:focus {
-  background: #c12728;
+  background: #36454F;
   color: white;
 }
 
 .navbar-nav li.active a {
-  background: #c12728;
+  background: #36454F;
   color: white;
 }
 
@@ -513,6 +513,8 @@ footer li {
   display: inline-block;
   margin: 0 auto 0 auto;
 }
+
+
 
 footer li a {
   display: block;
