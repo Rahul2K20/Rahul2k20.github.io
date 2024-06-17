@@ -159,8 +159,8 @@ $(document).ready(function() {
 	}
 
 	$(document).ready(function(){
-	    $(".owl-carousel").owlCarousel();
-	    $(".owl-carousel").trigger('owl.play',6000);
+	    $("#owl-carousel").owlCarousel();
+	    $("#owl-carousel").trigger('owl.play',6000);
 	});
 
 
