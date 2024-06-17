@@ -158,10 +158,18 @@ $(document).ready(function() {
 		}
 	}
 	
-	$("#skills").owlCarousel({
-	
-	autoPlay : 5000,
-	stopOnHover : false
-	)}
+	$(document).ready(function() {
+
+  $("#owl-slideshow").owlCarousel({
+    slideSpeed: 300,
+    loop: true,
+    autoPlay: true,
+    autoPlaySpeed: 5000,
+    autoPlayTimeout: 5000,
+    autoPlayHoverPause: false
+
+  });
+
+});
 
 });
