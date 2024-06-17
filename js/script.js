@@ -158,4 +158,10 @@ $(document).ready(function() {
 		}
 	}
 
+	$(document).ready(function(){
+	    $(".owl-carousel").owlCarousel();
+	    $(".owl-carousel").trigger('owl.play',6000);
+	});
+
+
 });
