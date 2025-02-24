@@ -16,7 +16,7 @@ $(window).on("load", function() {
 
 $(document).ready(function() {
 
-    var startDate = new Date(2023, 0, 1); 
+    var startDate = new Date(2023, 8, 25);
 
     var today = new Date();
 
