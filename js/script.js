@@ -12,152 +12,126 @@ $(window).on("load", function() {
 			queue: false
 		}
 	});
-
-})
-
+});
 
 $(document).ready(function() {
 
-	$('#slides').superslides({
-		animation: 'fade',
-		play: 5000,
-		pagination: false
-	});
+    var startDate = new Date(2023, 0, 1); 
 
-	var typed = new Typed(".typed", {
-		strings: ["Software Developer.", "GenAI Practitioner.", "AWS Certified."],
-		typeSpeed: 60,
-		loop: true,
-		startDelay: 1000,
-		showCursor: false
-	});
+    var today = new Date();
 
-	$('.owl-carousel').owlCarousel({
-		autoplay:true,
-		autoplayTimeout: 2500,
-	    loop:true,
-	    items: 4,
-	    responsive:{
-	        0:{
-	            items:1
-	        },
-	        480:{
-	            items:2
-	        },
-	        768:{
-	            items:3
-	        },
-	        938:{
-	            items:4
-	        }
-	    }
-	});
+    var differenceInTime = today.getTime() - startDate.getTime();
+    var experienceDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
 
+    $(".squareItem .counter").each(function() {
+        if ($(this).next("h3").text().includes("Gen AI Experience Days")) {
+            $(this).text(experienceDays);
+        }
+    });
 
+    $('#slides').superslides({
+        animation: 'fade',
+        play: 5000,
+        pagination: false
+    });
 
+    var typed = new Typed(".typed", {
+        strings: ["Software Developer.", "GenAI Practitioner.", "AWS Certified."],
+        typeSpeed: 60,
+        loop: true,
+        startDelay: 1000,
+        showCursor: false
+    });
 
+    $('.owl-carousel').owlCarousel({
+        autoplay:true,
+        autoplayTimeout: 2500,
+        loop:true,
+        items: 4,
+        responsive:{
+            0:{ items:1 },
+            480:{ items:2 },
+            768:{ items:3 },
+            938:{ items:4 }
+        }
+    });
 
-	var skillsTopOffset = $(".skillsSection").offset().top;
-	var statsTopOffset = $(".statsSection").offset().top;
-	var countUpFinished = false;
-	$(window).scroll(function() {
+    var skillsTopOffset = $(".skillsSection").offset().top;
+    var statsTopOffset = $(".statsSection").offset().top;
+    var countUpFinished = false;
 
-		if(window.pageYOffset > skillsTopOffset - $(window).height() + 200) {
+    $(window).scroll(function() {
+        if (window.pageYOffset > skillsTopOffset - $(window).height() + 200) {
+            $('.chart').easyPieChart({
+                easing: 'easeInOut',
+                barColor: '#fff',
+                trackColor: false,
+                scaleColor: false,
+                lineWidth: 4,
+                size: 152,
+                onStep: function(from, to, percent) {
+                    $(this.el).find('.percent').text(Math.round(percent));
+                }
+            });
+        }
 
-			$('.chart').easyPieChart({
-		        easing: 'easeInOut',
-		        barColor: '#fff',
-		        trackColor: false,
-		        scaleColor: false,
-		        lineWidth: 4,
-		        size: 152,
-		        onStep: function(from, to, percent) {
-		        	$(this.el).find('.percent').text(Math.round(percent));
-		        }
-		    });
+        if (!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
+            $(".counter").each(function() {
+                var element = $(this);
+                var endVal = parseInt(element.text());
+                element.countup(endVal);
+            });
 
+            countUpFinished = true;
+        }
+    });
 
-		}
+    $("[data-fancybox]").fancybox();
 
+    $("#filters a").click(function() {
+        $("#filters .current").removeClass("current");
+        $(this).addClass("current");
 
-		if(!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
-			$(".counter").each(function() {
-				var element = $(this);
-				var endVal = parseInt(element.text());
+        var selector = $(this).attr("data-filter");
 
-				element.countup(endVal);
-			})
-
-			countUpFinished = true;
-
-		}
-
-
-	});
-
-
-	$("[data-fancybox]").fancybox();
-
-	$("#filters a").click(function() {
-
-		$("#filters .current").removeClass("current");
-		$(this).addClass("current");
-
-		var selector = $(this).attr("data-filter");
-
-		$(".items").isotope({
-			filter: selector,
-			animationOptions: {
-				duration: 1500,
-				easing: 'linear',
-				queue: false
-			}
-		});
-
-		return false;
-	});
-
-
-
-	$("#navigation li a").click(function(e) {
-		e.preventDefault();
-
-		var targetElement = $(this).attr("href");
-		var targetPosition = $(targetElement).offset().top;
-		$("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
-
-	});
-	
-	 $(".borderBtn").click(function(e) {
-		e.preventDefault();
-
-		var targetElement = $(this).attr("href");
-		var targetPosition = $(targetElement).offset().top;
-		$("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
-
-	});
-	
-	$(".navbar-brand").click(function() {
-        $("html").animate({ scrollTop: 0 }, "slow");
+        $(".items").isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 1500,
+                easing: 'linear',
+                queue: false
+            }
         });
 
-	const nav = $("#navigation");
-	const navTop = nav.offset().top;
+        return false;
+    });
 
-	$(window).on("scroll", stickyNavigation);
+    $("#navigation li a, .borderBtn").click(function(e) {
+        e.preventDefault();
+        var targetElement = $(this).attr("href");
+        var targetPosition = $(targetElement).offset().top;
+        $("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
+    });
 
-	function stickyNavigation() {
+    $(".navbar-brand").click(function() {
+        $("html").animate({ scrollTop: 0 }, "slow");
+    });
 
-		var body = $("body");
+    const nav = $("#navigation");
+    const navTop = nav.offset().top;
 
-		if($(window).scrollTop() >= navTop) {
-			body.css("padding-top", nav.outerHeight() + "px");
-			body.addClass("fixedNav");
-		}
-		else {
-			body.css("padding-top", 0);
-			body.removeClass("fixedNav");
-		}
-	}
+    $(window).on("scroll", stickyNavigation);
+
+    function stickyNavigation() {
+        var body = $("body");
+
+        if ($(window).scrollTop() >= navTop) {
+            body.css("padding-top", nav.outerHeight() + "px");
+            body.addClass("fixedNav");
+        } else {
+            body.css("padding-top", 0);
+            body.removeClass("fixedNav");
+        }
+    }
 
 });
