@@ -99,7 +99,8 @@ $(document).ready(function() {
         $("html, body").animate({ scrollTop: targetPosition - 70 }, "slow");
     });
 
-    $(".navbar-brand").click(function() {
+    $(".navbar-brand").click(function(e) {
+        e.preventDefault();
         $("html").animate({ scrollTop: 0 }, "slow");
     });
 
