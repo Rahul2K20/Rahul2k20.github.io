@@ -953,10 +953,24 @@ footer .github:hover {
 }
 
 
-@media all and (max-device-width: 480px) {
- .titleMessage .heading .main {
-  font-size: 30px;
-}
+@media (max-width: 767px) {
+  .titleMessage .heading .main {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
+
+  .titleMessage .heading .sub {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .slides-navigation {
+    display: none;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
 }
 
 .filter {
