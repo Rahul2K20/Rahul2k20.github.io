@@ -16,6 +16,22 @@ $(window).on("load", function() {
 
 $(document).ready(function() {
 
+    // Reveal cards and sections with a fade-up the first time they scroll into view.
+    var skillCards = document.querySelectorAll(".skillCard, .reveal");
+    if ("IntersectionObserver" in window) {
+        var cardObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        skillCards.forEach(function(card) { cardObserver.observe(card); });
+    } else {
+        skillCards.forEach(function(card) { card.classList.add("visible"); });
+    }
+
     var startDate = new Date(2023, 8, 25);
 
     var today = new Date();
@@ -36,45 +52,17 @@ $(document).ready(function() {
     });
 
     var typed = new Typed(".typed", {
-        strings: ["Software Developer.", "GenAI Practitioner.", "AWS Certified."],
+        strings: ["AI Engineer.", "Software Developer.", "AWS Certified."],
         typeSpeed: 60,
         loop: true,
         startDelay: 1000,
         showCursor: false
     });
 
-    $('.owl-carousel').owlCarousel({
-        autoplay:true,
-        autoplayTimeout: 2500,
-        loop:true,
-        items: 4,
-        responsive:{
-            0:{ items:1 },
-            480:{ items:2 },
-            768:{ items:3 },
-            938:{ items:4 }
-        }
-    });
-
-    var skillsTopOffset = $(".skillsSection").offset().top;
     var statsTopOffset = $(".statsSection").offset().top;
     var countUpFinished = false;
 
     $(window).scroll(function() {
-        if (window.pageYOffset > skillsTopOffset - $(window).height() + 200) {
-            $('.chart').easyPieChart({
-                easing: 'easeInOut',
-                barColor: '#fff',
-                trackColor: false,
-                scaleColor: false,
-                lineWidth: 4,
-                size: 152,
-                onStep: function(from, to, percent) {
-                    $(this.el).find('.percent').text(Math.round(percent));
-                }
-            });
-        }
-
         if (!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
             $(".counter").each(function() {
                 var element = $(this);
@@ -85,8 +73,6 @@ $(document).ready(function() {
             countUpFinished = true;
         }
     });
-
-    $("[data-fancybox]").fancybox();
 
     $("#filters a").click(function() {
         $("#filters .current").removeClass("current");
@@ -106,11 +92,11 @@ $(document).ready(function() {
         return false;
     });
 
-    $("#navigation li a, .borderBtn").click(function(e) {
+    $("#navigation li a, .borderBtn.scrollto").click(function(e) {
         e.preventDefault();
         var targetElement = $(this).attr("href");
         var targetPosition = $(targetElement).offset().top;
-        $("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
+        $("html, body").animate({ scrollTop: targetPosition - 70 }, "slow");
     });
 
     $(".navbar-brand").click(function() {
@@ -133,5 +119,25 @@ $(document).ready(function() {
             body.removeClass("fixedNav");
         }
     }
+
+    // Highlight the nav link for the section currently in view.
+    var spySections = ["about", "experience", "skills", "stats", "portfolio"];
+
+    $(window).on("scroll", function() {
+        var pos = $(window).scrollTop() + 120;
+        var currentId = "";
+
+        spySections.forEach(function(id) {
+            var el = $("#" + id);
+            if (el.length && el.offset().top <= pos) {
+                currentId = id;
+            }
+        });
+
+        $("#navigation .nav-link").removeClass("active");
+        if (currentId) {
+            $("#navigation a[href='#" + currentId + "']").addClass("active");
+        }
+    });
 
 });
