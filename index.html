@@ -9,6 +9,43 @@
 	<meta name="description" content="Rahul Nagarajan is an AI Engineer building agentic systems, LangChain/LangGraph pipelines, and RAG architectures. Currently at Muir AI, previously Quest Global.">
 	<meta property="og:title" content="Rahul Nagarajan | AI Engineer">
 	<meta property="og:description" content="AI Engineer building agentic systems, LangChain/LangGraph pipelines, and RAG architectures.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://rahulnagarajan.com/">
+	<meta property="og:image" content="https://rahulnagarajan.com/img/og-card.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Rahul Nagarajan | AI Engineer">
+	<meta name="twitter:description" content="AI Engineer building agentic systems, LangChain/LangGraph pipelines, and RAG architectures.">
+	<meta name="twitter:image" content="https://rahulnagarajan.com/img/og-card.png">
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Rahul Nagarajan",
+		"jobTitle": "AI Engineer",
+		"url": "https://rahulnagarajan.com/",
+		"worksFor": {
+			"@type": "Organization",
+			"name": "Muir AI",
+			"url": "https://www.muir.ai/"
+		},
+		"alumniOf": {
+			"@type": "CollegeOrUniversity",
+			"name": "California State Polytechnic University, Pomona"
+		},
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Redmond",
+			"addressRegion": "WA",
+			"addressCountry": "US"
+		},
+		"sameAs": [
+			"https://github.com/Rahul2K20",
+			"https://www.linkedin.com/in/rahul-nagarajan-5b9765193/"
+		]
+	}
+	</script>
 	<link rel="stylesheet" type="text/css" href="css/superslides.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -124,18 +161,52 @@
 						<div class="timelineItem reveal">
 							<div class="timelineDate">Feb 2026 &ndash; Present</div>
 							<div class="timelineContent">
-								<h4>AI Engineer <span>&middot; Muir AI</span></h4>
+								<h4>AI Engineer <span>&middot; <a href="https://www.muir.ai/" target="_blank" rel="noopener" class="companyLink">Muir AI</a></span></h4>
 								<span class="timelineLocation">Seattle, WA</span>
 								<p class="timelineSummary">Building the pricing pipelines and BoM mass-propagation engine behind Muir's product cost and emissions platform.</p>
+								<button class="timelineToggle" aria-expanded="false">Details <i class="fas fa-chevron-down"></i></button>
+								<div class="timelineDetails">
+									<div class="timelineDetailsInner">
+										<ul>
+											<li>Shipped the pricing pipeline and curated cost dataset behind Muir's production cost model, part of landing the first paying customers</li>
+											<li>Built the BoM mass-propagation engine that feeds every mass, cost, and emission number Muir ships</li>
+											<li>Productionized LLM price extraction grounded in live market data</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
 
 						<div class="timelineItem reveal">
 							<div class="timelineDate">Sept 2023 &ndash; Feb 2026</div>
 							<div class="timelineContent">
-								<h4>Software Engineer <span>&middot; Quest Global</span></h4>
+								<h4>Software Engineer <span>&middot; <a href="https://www.quest-global.com/" target="_blank" rel="noopener" class="companyLink">Quest Global</a></span></h4>
 								<span class="timelineLocation">Redmond, WA</span>
 								<p class="timelineSummary">Shipped production agentic AI for BAE Systems avionics certification, an enterprise SQL RAG assistant in Teams, and a Salesforce&ndash;Kenandy ERP integration.</p>
+								<button class="timelineToggle" aria-expanded="false">Details <i class="fas fa-chevron-down"></i></button>
+								<div class="timelineDetails">
+									<div class="timelineDetailsInner">
+										<h5>Aviation Software Analysis (BAE Systems)</h5>
+										<ul>
+											<li>LangGraph agents extracting requirements from 500K+ lines of legacy avionics code at 92% accuracy</li>
+											<li>Human approval gates at every stage for DO-178C certification</li>
+											<li>Cut requirements cycle time from 8 weeks to 2.8 per module</li>
+										</ul>
+
+										<h5>Enterprise SQL RAG Assistant (Internal)</h5>
+										<ul>
+											<li>Graph RAG (Neo4j) plus Pinecone search: 89% accuracy over a 500+ table warehouse</li>
+											<li>8K+ queries a week in Teams at 1.8s P95 and 94% user satisfaction</li>
+											<li>Redis semantic cache cut redundant LLM calls 73%, saving $4,200 a month</li>
+										</ul>
+
+										<h5>Salesforce&ndash;Kenandy ERP Integration (3Sigma)</h5>
+										<ul>
+											<li>FastAPI ETL syncing 15K+ accounts and 350K+ records daily between CRM and ERP</li>
+											<li>Replaced Zapier Enterprise and MuleSoft, saving $78K a year</li>
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
 

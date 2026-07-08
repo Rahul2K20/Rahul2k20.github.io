@@ -104,6 +104,12 @@ $(document).ready(function() {
         $("html").animate({ scrollTop: 0 }, "slow");
     });
 
+    $(".timelineToggle").click(function() {
+        var item = $(this).closest(".timelineItem");
+        item.toggleClass("expanded");
+        $(this).attr("aria-expanded", item.hasClass("expanded"));
+    });
+
     const nav = $("#navigation");
     const navTop = nav.offset().top;
 
